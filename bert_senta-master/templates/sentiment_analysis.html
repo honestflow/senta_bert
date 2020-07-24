@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="这是黄河涛的毕业设计，中文情感分析系统">
+    <title>MySenta中文文本情感分析系统</title>
+<script src="../static/js/jquery-3.4.1.min.js"></script>
+
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" type="text/css" href="../static/js/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script type="text/javascript" src="../static/js/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+
+
+<link rel="apple-touch-icon" href="../static/img/mysenta_icon.png" sizes="180x180">
+<link rel="icon" href="../static/img/mysenta_icon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../static/img/mysenta_icon.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../static/img/mysenta_icon.png">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+      <link href="../static/css/senta.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+      <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">MySenta</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+
+                    <li>用户：{{ login_user }}</li>
+                    <li><a href="{{ url_for('logout') }}">退出</a></li>
+
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+    <div class="class-container">
+    <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="../static/img/analysis.jpg" alt="" width="200" height="100">
+    <br><br>
+    <p class="lead">MySenta是一个中文文本情感分析系统，它能根据你输入的文本来分析属于什么情感类型。请在下方输入框输入你想进行情感分析的文本</p>
+    </div>
+
+      <form class="text-analysis" action=""  method = "POST">
+        <div class="input-group">
+          <input name="analysis-text" type="text" class="form-control" placeholder="请输入测试文本" autocomplete="off">
+            <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="showResult()">分析</button>
+        </div>
+     </form>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+
+          <div class="flash-message alert alert-info" role="alert"><li style="list-style-type: none;">
+              分析结果<br>
+              测试文本：{{ message }}<br>
+              正向（Positive）情感概率：{{ resultscores1 }}<br>
+              负向（Negative）情感概率：{{ resultscores0 }}<br>
+              结论：{{ resultmsg}}
+          </li></div>
+
+
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+      </div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>中文情感分析系统 <a>MySenta</a>, by <a>@黄河涛</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

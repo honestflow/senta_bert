@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <link rel="apple-touch-icon" href="../static/img/signin_icon1.png" sizes="180x180">
+    <link rel="icon" href="../static/img/mysenta_icon.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../static/img/mysenta_icon.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../static/img/mysenta_icon.png">
+
+    <title>MySenta中文文本情感分析系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/cover.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">MySenta</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="{{ url_for('home') }}">主页</a></li>
+                  <li><a href="{{ url_for('register') }}">注册</a></li>
+                  <li><a href="{{ url_for('login') }}">登录</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <h1 class="cover-heading">文本情感分析</h1>
+            <p class="lead">文本情感分析，又被称为意见挖掘，是指将文本根据其所蕴含的情感倾向性分类为正面、负面或中性文本的研究。文本情感分析的目的在于：从可能带有感情色彩的文本当中，分析蕴含的情感信息，如情感的消极与积极，幽默感，讽刺等情绪。</p>
+            <p class="lead">
+              <a href="{{ url_for('register') }}" class="btn btn-lg btn-default">Let's start</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>中文情感分析系统 <a>MySenta</a>, by <a>@黄河涛</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
