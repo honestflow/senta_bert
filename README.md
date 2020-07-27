@@ -1,2 +1,2 @@
 # senta_bert
-一个简单的基于BERT的文本情感分析
+A simple text sentiment analysis system based on Bert
